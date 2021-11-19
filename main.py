@@ -1,6 +1,6 @@
 import time
 
-def speed_calc_decorator(function):
+def speed_decorator(function):
   def wrapper_function():
     start = time.time()
     function()
@@ -12,12 +12,12 @@ def speed_calc_decorator(function):
 
 # example functions to make a comparison between
 
-@speed_calc_decorator
+@speed_decorator
 def fast_function():
     for i in range(1000000):
         i * i
 
-@speed_calc_decorator       
+@speed_decorator       
 def slow_function():
     for i in range(10000000):
         i * i
